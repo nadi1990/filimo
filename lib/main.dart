@@ -1,4 +1,5 @@
 import 'package:filimo/screens/home_screen.dart';
+import 'package:filimo/screens/nav_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Filimo",
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: NavScreen(),
     );
   }
 }

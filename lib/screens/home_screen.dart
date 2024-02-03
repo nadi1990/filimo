@@ -1,5 +1,10 @@
 import 'package:filimo/data/color.dart';
+import 'package:filimo/widget/image_slider.dart';
+import 'package:filimo/widget/series_list.dart';
 import 'package:flutter/material.dart';
+
+import '../data/data.dart';
+import '../widget/main_image.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -32,6 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
     var size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
+        extendBodyBehindAppBar: true,
         backgroundColor: scaffoldColor,
         appBar: PreferredSize(
           preferredSize: Size(size.width, size.height * 0.1),
@@ -66,6 +72,31 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
+        ),
+        body: Container(
+          width: size.width,height: size.height,child: CustomScrollView(
+          controller: scrollController,
+          slivers: [
+            SliverToBoxAdapter(
+                child:ImageSlider()
+            ),
+            SliverToBoxAdapter(
+                child:SeriesList(title: "ویژه",list: vizhe,isHorizontall: true)
+            ),
+            SliverToBoxAdapter(
+                child:SeriesList(title: "تازه ها", list: tazeha)
+            ),
+            SliverToBoxAdapter(
+                child:SeriesList(title: "داغترین ها", list: dagh)
+            ),
+            SliverToBoxAdapter(
+                child:SeriesList(title: "تماشا", list: tamasha)
+            ),
+            SliverToBoxAdapter(
+                child:SeriesList(title: "محبوب ترین ها", list: mahoob)
+            ),
+          ],
+        ),
         ),
       ),
     );
