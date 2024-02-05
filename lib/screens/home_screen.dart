@@ -2,6 +2,8 @@ import 'package:filimo/data/color.dart';
 import 'package:filimo/widget/image_slider.dart';
 import 'package:filimo/widget/series_list.dart';
 import 'package:flutter/material.dart';
+import 'package:frino_icons/frino_icons.dart';
+import 'package:iconsax/iconsax.dart';
 
 import '../data/data.dart';
 import '../widget/main_image.dart';
@@ -48,12 +50,8 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: EdgeInsets.symmetric(horizontal: size.width * 0.02),
             child: Row(
               children: [
-                IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.menu, color: Colors.white)),
-                IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.search, color: Colors.white)),
+                Image.network("https://attachments-us1-cloud-deskpro-com.s3.amazonaws.com/files/35988/14/13111WNZWKWNBPRDQWMR0-61765b5714662_logo-color-black-512px.png",width: size.width*0.2,height: size.height*0.08,),
+                Spacer(),
                 Container(
                   width: size.width * 0.07,
                   height: size.width * 0.07,
@@ -65,10 +63,17 @@ class _HomeScreenState extends State<HomeScreen> {
                           image: NetworkImage(
                               "https://cdn.icon-icons.com/icons2/2645/PNG/512/person_circle_icon_159926.png"),
                           fit: BoxFit.cover)),
-
+      
                 ),
-                Spacer(),
-                Image.network("https://attachments-us1-cloud-deskpro-com.s3.amazonaws.com/files/35988/14/13111WNZWKWNBPRDQWMR0-61765b5714662_logo-color-black-512px.png",width: size.width*0.2,height: size.height*0.08,)
+                IconButton(
+                    onPressed: () {},
+                    icon: Icon(FrinoIcons.f_search, color: Colors.white)),
+                IconButton(
+                    onPressed: () {},
+                    icon: Icon(Iconsax.sort, color: Colors.white)),
+      
+      
+      
               ],
             ),
           ),

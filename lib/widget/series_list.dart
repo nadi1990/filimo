@@ -20,7 +20,7 @@ class SeriesList extends StatelessWidget {
     var size = MediaQuery.of(context).size;
 
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: size.width * .03),
+      padding: EdgeInsets.only(right: size.width * .03),
       width: size.width,
       height: size.height * .4,
       child: Column(
@@ -28,14 +28,12 @@ class SeriesList extends StatelessWidget {
         children: [
           Row(
             children: [
-              IconButton(
-                  onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => SeeAllScreen(title: title, list: list, isHorizontall: isHorizontall)));
-                  },
-                  icon: Icon(
-                    Icons.arrow_back_ios,
-                    color: mainColor,
-                  )),
+              Text(title,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w900,
+                      fontSize: size.width * .04)),
+              Spacer(),
               Text(
                 "مشاهده همه",
                 style: TextStyle(
@@ -43,19 +41,23 @@ class SeriesList extends StatelessWidget {
                     fontWeight: FontWeight.w900,
                     fontSize: size.width * .04),
               ),
-              Spacer(),
-              Text(title,
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w900,
-                      fontSize: size.width * .04))
+              IconButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => SeeAllScreen(title: title, list: list, isHorizontall: isHorizontall)));
+                  },
+                  icon: Icon(
+                    Icons.arrow_forward_ios,
+                    color: mainColor,
+                  )),
+
+
+
             ],
           ),
           Container(
             width: size.width,
             height:isHorizontall? size.height * .25 : size.height*.3,
             child: ListView.builder(
-              reverse: true,
               itemBuilder: (BuildContext context, int index) {
                 Media media = list[index];
                 return MediaCard(media: media , isHorizontall: isHorizontall,);

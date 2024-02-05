@@ -31,6 +31,12 @@ class _CategoryScreenState extends State<CategoryScreen> {
                         EdgeInsets.symmetric(horizontal: size.width * 0.02),
                     child: Row(
                       children: [
+                        Image.network(
+                          "https://attachments-us1-cloud-deskpro-com.s3.amazonaws.com/files/35988/14/13111WNZWKWNBPRDQWMR0-61765b5714662_logo-color-black-512px.png",
+                          width: size.width * 0.2,
+                          height: size.height * 0.08,
+                        ),
+                        Spacer(),
                         IconButton(
                             onPressed: () {
                               setState(() {
@@ -50,12 +56,6 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                       "https://cdn.icon-icons.com/icons2/2645/PNG/512/person_circle_icon_159926.png"),
                                   fit: BoxFit.cover)),
                         ),
-                        Spacer(),
-                        Image.network(
-                          "https://attachments-us1-cloud-deskpro-com.s3.amazonaws.com/files/35988/14/13111WNZWKWNBPRDQWMR0-61765b5714662_logo-color-black-512px.png",
-                          width: size.width * 0.2,
-                          height: size.height * 0.08,
-                        )
                       ],
                     ),
                   )

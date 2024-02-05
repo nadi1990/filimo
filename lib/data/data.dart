@@ -3,6 +3,8 @@ import 'package:filimo/model/slide.dart';
 import 'package:filimo/screens/home_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:frino_icons/frino_icons.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 import '../model/Media.dart';
@@ -177,20 +179,20 @@ List<PersistentBottomNavBarItem>navItems (){
   return [
     PersistentBottomNavBarItem(
       title: "ویترین",
-      icon: Image.asset("assets/filimo.png"),
+      icon: Image.network("https://i.postimg.cc/ry0PfrPG/icon-color-128px.png"),
       activeColorPrimary: mainColor,
       inactiveColorPrimary: Colors.white54,
       inactiveIcon: Image.asset("assets/gray_icon.png"),
     ),
     PersistentBottomNavBarItem(
         title: "دسته بندی",
-        icon: Icon(Icons.menu_outlined),
+        icon: Icon(Iconsax.category),
         activeColorPrimary: mainColor,
         inactiveColorPrimary:Colors.white54
     ),
     PersistentBottomNavBarItem(
         title: "فیلم های من",
-        icon:Icon(CupertinoIcons.video_camera_solid) ,
+        icon:Icon(Icons.camera) ,
         activeColorPrimary:mainColor ,
         inactiveColorPrimary:Colors.white54
     )

@@ -14,18 +14,21 @@ class _NavScreenState extends State<NavScreen> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    return  Scaffold(
-      body: PersistentTabView(
-        decoration: NavBarDecoration(),
-        context,
-        screens: screens(),
-        items: navItems(),
-        backgroundColor: scaffoldColor,
-        navBarStyle: NavBarStyle.style11,
-        navBarHeight: size.height*.09,
-        itemAnimationProperties: ItemAnimationProperties(
-          duration: Duration(microseconds: 3000),
-          curve: Curves.linear
+    return  Directionality(
+      textDirection: TextDirection.rtl,
+      child: Scaffold(
+        body: PersistentTabView(
+          decoration: NavBarDecoration(),
+          context,
+          screens: screens(),
+          items: navItems(),
+          backgroundColor: scaffoldColor,
+          navBarStyle: NavBarStyle.style11,
+          navBarHeight: size.height*.085,
+          itemAnimationProperties: ItemAnimationProperties(
+            duration: Duration(microseconds: 3000),
+            curve: Curves.linear
+          ),
         ),
       ),
     );

@@ -20,7 +20,7 @@ class MediaCard extends StatelessWidget {
       child: Column(children: [
         Container(
           width: isHorizontall ? size.width * .75 : size.width * .4,
-          height: size.height * .25,
+          height: size.height * .22,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               image: DecorationImage(
@@ -30,7 +30,7 @@ class MediaCard extends StatelessWidget {
             ? Container(
                 width: size.width* .4,
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       media.farsiName,
